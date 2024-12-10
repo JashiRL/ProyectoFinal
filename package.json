@@ -13,19 +13,22 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.13.6",
+    "axios": "^1.7.9",
     "core-js": "^3.25.3",
+    "http-proxy-middleware": "^3.0.3",
+    "lodash.template": "^4.5.0",
     "nuxt": "^3.7.4",
     "ProyectoFinal": "file:",
-    "vue": "^2.7.16",
-    "vue-server-renderer": "^2.7.10",
-    "vue-template-compiler": "^2.7.10",
-    "vuetify": "^2.7.2"
+    "vue": "^3.5.13",
+    "vue-server-renderer": "^2.7.16",
+    "vue-template-compiler": "^2.7.16",
+    "vuetify": "^3.7.5"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.19.1",
     "@nuxtjs/eslint-config": "^11.0.0",
     "@nuxtjs/eslint-module": "^3.1.0",
-    "@nuxtjs/vuetify": "^1.12.3",
+    "@nuxtjs/vuetify": "^0.1.1",
     "eslint": "^8.24.0",
     "eslint-plugin-nuxt": "^4.0.0",
     "eslint-plugin-vue": "^9.5.1"

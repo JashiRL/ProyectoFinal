@@ -1,4 +1,4 @@
-import colors from 'vuetify/lib/util/colors'
+import colors, { blue } from 'vuetify/lib/util/colors'
 
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
