@@ -2,7 +2,7 @@
   <v-container>
     <v-row class="texto">
       <v-col>
-        <h3>Medicine Management</h3>
+        <h3>Treateament Management</h3>
       </v-col>
     </v-row>
     <v-row class="texto2">
@@ -10,16 +10,16 @@
         <v-btn class="boton1">
           Generate Report
         </v-btn>
-        <v-text-field label="Medicine Name" outlined />
-        <v-text-field type="date" label="Expire Date" outlined />
-        <v-text-field label="QTY" outlined />
+        <v-text-field label="Treatment Name" outlined />
+        <v-text-field label="Doctor Name" outlined />
+        <v-text-field label="Lab Name" outlined />
       </v-col>
       <v-col md="4" class="columna2">
-        <v-text-field class="renglon" label="Medicine Id" outlined />
-        <v-text-field class="renglon1" label="Supplier Name" outlined />
-        <v-text-field type="date" class="renglon2" label="Manufectare Date" outlined />
+        <v-text-field class="renglon" label=" Treatment Id" outlined />
+        <v-text-field class="renglon1" label="Patient Name" outlined />
+        <v-text-field class="renglon2" label="Number of nurses" outlined />
         <v-text-field
-          label="Unit Price"
+          label="Total Ward charge"
           outlined
           class="custom-text-field"
           prepend-inner-icon="mdi-currency-usd"
@@ -56,25 +56,26 @@
       <v-simple-table class="tabla">
         <thead>
           <tr>
-            <th>ID</th>
-            <th>Medicine Name</th>
-            <th>Expire Date</th>
-            <th>Manufacture Date</th>
-            <th>Supplier Name</th>
-            <th>Unit Price</th>
-            <th>QTY</th>
+            <th>Treateament ID</th>
+            <th>Treateament Name</th>
+            <th>Patient Name</th>
+            <th>Doctor Name</th>
+            <th>Number of nurses</th>
+            <th>Lab Name</th>
+            <th>Total Ward Charge</th>
             <th>Actions</th>
           </tr>
         </thead>
         <tbody>
           <tr v-for="item in suppliers" :key="item.id">
-            <td>{{ item.medicineID }}</td>
-            <td>{{ item.mnombre }}</td>
-            <td>{{ item.expireDate }}</td>
-            <td>{{ item.manuDate }}</td>
-            <td>{{ item.supplier }}</td>
-            <td>{{ item.unitPrice }}</td>
-            <td>{{ item.qty }}</td>
+            <td>{{ item.id }}</td>
+            <td>{{ item.treatment }}</td>
+            <td>{{ item.patient }}</td>
+            <td>{{ item.manufacture }}</td>
+            <td>{{ item.doctor }}</td>
+            <td>{{ item.nurses }}</td>
+            <td>{{ item.totalward }}</td>
+            <td>{{ item.lab }}</td>
             <td>
               <v-btn icon small>
                 <v-icon>mdi-pencil</v-icon>

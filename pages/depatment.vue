@@ -2,7 +2,7 @@
   <v-container>
     <v-row class="texto">
       <v-col>
-        <h3>Medicine Management</h3>
+        <h3>Departament Management</h3>
       </v-col>
     </v-row>
     <v-row class="texto2">
@@ -10,26 +10,14 @@
         <v-btn class="boton1">
           Generate Report
         </v-btn>
-        <v-text-field label="Medicine Name" outlined />
-        <v-text-field type="date" label="Expire Date" outlined />
-        <v-text-field label="QTY" outlined />
+        <v-text-field label="Departament Name" outlined />
+        <v-text-field type="date" label="Open Date" outlined />
+        <v-text-field label="Departament Contact Number" outlined />
       </v-col>
       <v-col md="4" class="columna2">
-        <v-text-field class="renglon" label="Medicine Id" outlined />
-        <v-text-field class="renglon1" label="Supplier Name" outlined />
-        <v-text-field type="date" class="renglon2" label="Manufectare Date" outlined />
-        <v-text-field
-          label="Unit Price"
-          outlined
-          class="custom-text-field"
-          prepend-inner-icon="mdi-currency-usd"
-        >
-          <template #prepend-inner>
-            <div class="prefix-box">
-              RS:
-            </div>
-          </template>
-        </v-text-field>
+        <v-text-field class="renglon" label="Departamanet Id" outlined />
+        <v-text-field class="renglon1" label="Location" outlined />
+        <v-text-field type="time" class="renglon2" label="Open Time" outlined />
       </v-col>
       <v-col md="2">
         <v-btn class="boton2">
@@ -48,7 +36,7 @@
     </v-row>
     <v-row class="texto3">
       <h3 class="titulo">
-        Out of Stock
+        Recent Departamanet
       </h3>
       <p class="parrafo">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, culpa.
@@ -56,25 +44,23 @@
       <v-simple-table class="tabla">
         <thead>
           <tr>
-            <th>ID</th>
-            <th>Medicine Name</th>
-            <th>Expire Date</th>
-            <th>Manufacture Date</th>
-            <th>Supplier Name</th>
-            <th>Unit Price</th>
-            <th>QTY</th>
+            <th>Departament ID</th>
+            <th>Departamanet Name</th>
+            <th>Location</th>
+            <th>Open Date</th>
+            <th>Open Time</th>
+            <th>Departamanet Contact Number</th>
             <th>Actions</th>
           </tr>
         </thead>
         <tbody>
           <tr v-for="item in suppliers" :key="item.id">
-            <td>{{ item.medicineID }}</td>
-            <td>{{ item.mnombre }}</td>
-            <td>{{ item.expireDate }}</td>
-            <td>{{ item.manuDate }}</td>
-            <td>{{ item.supplier }}</td>
-            <td>{{ item.unitPrice }}</td>
-            <td>{{ item.qty }}</td>
+            <td>{{ item.departamentid }}</td>
+            <td>{{ item.dName }}</td>
+            <td>{{ item.dlocation }}</td>
+            <td>{{ item.dopenDate }}</td>
+            <td>{{ item.dopenTime }}</td>
+            <td>{{ item.dcontactNumber }}</td>
             <td>
               <v-btn icon small>
                 <v-icon>mdi-pencil</v-icon>

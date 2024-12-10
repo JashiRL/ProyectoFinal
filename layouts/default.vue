@@ -6,6 +6,8 @@
       :clipped="clipped"
       fixed
       app
+      permanent
+      class="panel"
     >
       <v-list>
         <v-list-item
@@ -19,7 +21,7 @@
             <v-icon>{{ item.icon }}</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title>{{ item.title }}</v-list-item-title>
+            <v-list-item-title v-text="item.title" />
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -28,63 +30,28 @@
       :clipped-left="clipped"
       fixed
       app
+      color="white"
+      flat
     >
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
+      <v-app-bar-nav-icon class="bar" @click.stop="drawer = !drawer" />
       <v-btn
         icon
         @click.stop="miniVariant = !miniVariant"
       >
         <v-icon>mdi-{{ `chevron-${miniVariant ? 'right' : 'left'}` }}</v-icon>
       </v-btn>
-      <v-btn
-        icon
-        @click.stop="clipped = !clipped"
-      >
-        <v-icon>mdi-application</v-icon>
-      </v-btn>
-      <v-btn
-        icon
-        @click.stop="fixed = !fixed"
-      >
-        <v-icon>mdi-minus</v-icon>
-      </v-btn>
-      <v-toolbar-title>{{ title }}</v-toolbar-title>
+      <v-toolbar-title class="title" v-text="title" />
       <v-spacer />
-      <v-btn
-        icon
-        @click.stop="rightDrawer = !rightDrawer"
-      >
-        <v-icon>mdi-menu</v-icon>
+      <v-btn icon>
+        <v-icon>mdi-account-injury</v-icon>
       </v-btn>
+      <span>Prasad</span>
     </v-app-bar>
     <v-main>
       <v-container>
         <Nuxt />
       </v-container>
     </v-main>
-    <v-navigation-drawer
-      v-model="rightDrawer"
-      :right="right"
-      temporary
-      fixed
-    >
-      <v-list>
-        <v-list-item @click.native="right = !right">
-          <v-list-item-action>
-            <v-icon light>
-              mdi-repeat
-            </v-icon>
-          </v-list-item-action>
-          <v-list-item-title>Switch drawer (click me)</v-list-item-title>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer>
-    <v-footer
-      :absolute="!fixed"
-      app
-    >
-      <span>&copy; {{ new Date().getFullYear() }}</span>
-    </v-footer>
   </v-app>
 </template>
 
@@ -98,21 +65,96 @@ export default {
       fixed: false,
       items: [
         {
-          icon: 'mdi-apps',
-          title: 'Welcome',
+          icon: 'mdi-gauge',
+          title: 'Dashboard',
           to: '/'
         },
         {
-          icon: 'mdi-chart-bubble',
-          title: 'Inspire',
+          icon: 'mdi-heart-pulse',
+          title: 'Medicine',
           to: '/inspire'
+        },
+        {
+          icon: 'mdi-account-multiple',
+          title: 'Staff',
+          to: '/staff'
+        },
+        {
+          icon: 'mdi-medication',
+          title: 'Lab',
+          to: '/lab'
+        },
+        {
+          icon: 'mdi-home',
+          title: 'Ward',
+          to: '/ward'
+        },
+        {
+          icon: 'mdi-needle',
+          title: 'Treatment',
+          to: '/treatment'
+        },
+        {
+          icon: 'mdi-hospital-building',
+          title: 'Pharmary',
+          to: '/pharmary'
+        },
+        {
+          icon: 'mdi-account-injury',
+          title: 'Patient',
+          to: '/patient'
+        },
+        {
+          icon: 'mdi-ambulance',
+          title: 'Supplier',
+          to: '/supplier'
+        },
+        {
+          icon: 'mdi-medical-cotton-swab',
+          title: 'Prescription',
+          to: '/prescription'
+        },
+        {
+          icon: 'mdi-clipboard-pulse',
+          title: 'Appoiment',
+          to: '/appoiment'
+        },
+        {
+          icon: 'mdi-account-heart',
+          title: 'Depatment',
+          to: '/depatment'
+        },
+        {
+          icon: 'mdi-radiology-box',
+          title: 'inovoice',
+          to: '/inovoice'
         }
       ],
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: 'Vuetify.js'
+      title: 'Medicorazon'
     }
   }
 }
 </script>
+
+<style scoped>
+.panel {
+  background: linear-gradient(-90deg,#8377a0, #8e81cc);
+}
+.title {
+  margin-left: 38%
+}
+.bar {
+  background: linear-gradient(-90deg,#8377a0, #8e81cc);
+}
+.tabla {
+  margin-left: 20%;
+}
+.contenedor{
+  margin-left: 20%;
+  margin-right: 50%;
+  margin-top: 10%;
+}
+</style>

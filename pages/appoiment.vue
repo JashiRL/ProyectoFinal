@@ -2,7 +2,7 @@
   <v-container>
     <v-row class="texto">
       <v-col>
-        <h3>Medicine Management</h3>
+        <h3>Appoiment Management</h3>
       </v-col>
     </v-row>
     <v-row class="texto2">
@@ -10,26 +10,21 @@
         <v-btn class="boton1">
           Generate Report
         </v-btn>
-        <v-text-field label="Medicine Name" outlined />
-        <v-text-field type="date" label="Expire Date" outlined />
-        <v-text-field label="QTY" outlined />
+        <v-text-field label="First Name" outlined />
+        <v-text-field label="Email" outlined />
+        <v-text-field label="NIC" outlined />
+        <v-text-field label="Gender" outlined />
+        <v-text-field label="Departament Name" outlined />
+        <v-text-field label="Address" outlined />
       </v-col>
       <v-col md="4" class="columna2">
-        <v-text-field class="renglon" label="Medicine Id" outlined />
-        <v-text-field class="renglon1" label="Supplier Name" outlined />
-        <v-text-field type="date" class="renglon2" label="Manufectare Date" outlined />
-        <v-text-field
-          label="Unit Price"
-          outlined
-          class="custom-text-field"
-          prepend-inner-icon="mdi-currency-usd"
-        >
-          <template #prepend-inner>
-            <div class="prefix-box">
-              RS:
-            </div>
-          </template>
-        </v-text-field>
+        <v-text-field class="renglon" label="Id" outlined />
+        <v-text-field class="renglon1" label="Last Name" outlined />
+        <v-text-field class="renglon2" label="Mobile Number" outlined />
+        <v-text-field type="date" label="Date Birthay" outlined />
+        <v-text-field type="data" label="Appoiment Date" outlined />
+        <v-text-field type="datetime-local" label="Appoiment Time" outlined />
+        <v-text-field label="Doctor Name" outlined />
       </v-col>
       <v-col md="2">
         <v-btn class="boton2">
@@ -37,7 +32,7 @@
         </v-btn>
       </v-col>
       <v-btn class="boton3">
-        add
+        Register
       </v-btn>
       <v-btn class="boton4">
         update
@@ -48,7 +43,7 @@
     </v-row>
     <v-row class="texto3">
       <h3 class="titulo">
-        Out of Stock
+        Recent Appoiment
       </h3>
       <p class="parrafo">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, culpa.
@@ -57,27 +52,27 @@
         <thead>
           <tr>
             <th>ID</th>
-            <th>Medicine Name</th>
-            <th>Expire Date</th>
-            <th>Manufacture Date</th>
-            <th>Supplier Name</th>
-            <th>Unit Price</th>
-            <th>QTY</th>
-            <th>Actions</th>
+            <th>Name</th>
+            <th>Rol</th>
+            <th>Gender</th>
+            <th>Mobile Number</th>
+            <th>NIC</th>
+            <th>DOB</th>
+            <th>Status</th>
           </tr>
         </thead>
         <tbody>
           <tr v-for="item in suppliers" :key="item.id">
-            <td>{{ item.medicineID }}</td>
-            <td>{{ item.mnombre }}</td>
-            <td>{{ item.expireDate }}</td>
-            <td>{{ item.manuDate }}</td>
-            <td>{{ item.supplier }}</td>
-            <td>{{ item.unitPrice }}</td>
-            <td>{{ item.qty }}</td>
+            <td>{{ item.id }}</td>
+            <td>{{ item.name }}</td>
+            <td>{{ item.rol }}</td>
+            <td>{{ item.gender }}</td>
+            <td>{{ item.number }}</td>
+            <td>{{ item.nic }}</td>
+            <td>{{ item.dob }}</td>
             <td>
               <v-btn icon small>
-                <v-icon>mdi-pencil</v-icon>
+                <v-icon>mdi-status</v-icon>
               </v-btn>
               <v-btn icon small>
                 <v-icon>mdi-delete</v-icon>

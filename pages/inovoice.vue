@@ -2,7 +2,7 @@
   <v-container>
     <v-row class="texto">
       <v-col>
-        <h3>Medicine Management</h3>
+        <h3>Inovoice Management</h3>
       </v-col>
     </v-row>
     <v-row class="texto2">
@@ -10,26 +10,15 @@
         <v-btn class="boton1">
           Generate Report
         </v-btn>
-        <v-text-field label="Medicine Name" outlined />
-        <v-text-field type="date" label="Expire Date" outlined />
-        <v-text-field label="QTY" outlined />
+        <v-text-field label="Patient Name" outlined />
+        <v-text-field label="Lab Name" outlined />
+        <v-text-field label="Ward Number" outlined />
       </v-col>
       <v-col md="4" class="columna2">
-        <v-text-field class="renglon" label="Medicine Id" outlined />
-        <v-text-field class="renglon1" label="Supplier Name" outlined />
-        <v-text-field type="date" class="renglon2" label="Manufectare Date" outlined />
-        <v-text-field
-          label="Unit Price"
-          outlined
-          class="custom-text-field"
-          prepend-inner-icon="mdi-currency-usd"
-        >
-          <template #prepend-inner>
-            <div class="prefix-box">
-              RS:
-            </div>
-          </template>
-        </v-text-field>
+        <v-text-field class="renglon" label="Inovoice Id" outlined />
+        <v-text-field class="renglon1" label="Doctor Name" outlined />
+        <v-text-field class="renglon2" label="Treatment" outlined />
+        <h2>Total Amound: 15000</h2>
       </v-col>
       <v-col md="2">
         <v-btn class="boton2">
@@ -37,18 +26,12 @@
         </v-btn>
       </v-col>
       <v-btn class="boton3">
-        add
-      </v-btn>
-      <v-btn class="boton4">
-        update
-      </v-btn>
-      <v-btn class="boton5">
-        delete
+        Generate Bill
       </v-btn>
     </v-row>
     <v-row class="texto3">
       <h3 class="titulo">
-        Out of Stock
+        Recent Inovoice
       </h3>
       <p class="parrafo">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, culpa.
@@ -57,24 +40,24 @@
         <thead>
           <tr>
             <th>ID</th>
-            <th>Medicine Name</th>
-            <th>Expire Date</th>
-            <th>Manufacture Date</th>
-            <th>Supplier Name</th>
-            <th>Unit Price</th>
-            <th>QTY</th>
+            <th>Patient Name</th>
+            <th>Lab Name</th>
+            <th>Ward Number</th>
+            <th>Doctor Name</th>
+            <th>Treatment</th>
+            <th>Total Aumounth</th>
             <th>Actions</th>
           </tr>
         </thead>
         <tbody>
           <tr v-for="item in suppliers" :key="item.id">
-            <td>{{ item.medicineID }}</td>
-            <td>{{ item.mnombre }}</td>
-            <td>{{ item.expireDate }}</td>
-            <td>{{ item.manuDate }}</td>
-            <td>{{ item.supplier }}</td>
-            <td>{{ item.unitPrice }}</td>
-            <td>{{ item.qty }}</td>
+            <td>{{ item.id }}</td>
+            <td>{{ item.name }}</td>
+            <td>{{ item.Lname }}</td>
+            <td>{{ item.ward }}</td>
+            <td>{{ item.doctor }}</td>
+            <td>{{ item.treatment }}</td>
+            <td>{{ item.total }}</td>
             <td>
               <v-btn icon small>
                 <v-icon>mdi-pencil</v-icon>
@@ -110,17 +93,11 @@ export default {
   margin-top: 1%;
   margin-left: 2%;
 }
-.v-btn.boton5 {
-  background: linear-gradient(-90deg, #cb4545,#db1818);
-  margin-left: 5%;
-}
-.v-btn.boton4 {
-  background-color: #5634d1;
-  margin-left: 5%;
-}
 .v-btn.boton3 {
-  background: linear-gradient(-90deg, #34bf0a,#85d122);
+  background: linear-gradient(-90deg,#7f7694, #8e81cc);
   margin-left: 25%;
+  width: 40%;
+  border-radius: 10px;
 }
 .custom-text-field .prefix-box {
   background-color: black; /* Fondo negro */

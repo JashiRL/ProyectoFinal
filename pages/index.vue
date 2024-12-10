@@ -1,79 +1,96 @@
 <template>
-  <v-row justify="center" align="center">
-    <v-col cols="12" sm="8" md="6">
-      <v-card class="logo py-4 d-flex justify-center">
-        <NuxtLogo />
-        <VuetifyLogo />
-      </v-card>
-      <v-card>
-        <v-card-title class="headline">
-          Welcome to the Vuetify + Nuxt.js template
-        </v-card-title>
-        <v-card-text>
-          <p>Vuetify is a progressive Material Design component framework for Vue.js. It was designed to empower developers to create amazing applications.</p>
-          <p>
-            For more information on Vuetify, check out the <a
-              href="https://vuetifyjs.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              documentation
-            </a>.
-          </p>
-          <p>
-            If you have questions, please join the official <a
-              href="https://chat.vuetifyjs.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="chat"
-            >
-              discord
-            </a>.
-          </p>
-          <p>
-            Find a bug? Report it on the github <a
-              href="https://github.com/vuetifyjs/vuetify/issues"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="contribute"
-            >
-              issue board
-            </a>.
-          </p>
-          <p>Thank you for developing with Vuetify and I look forward to bringing more exciting features in the future.</p>
-          <div class="text-xs-right">
-            <em><small>&mdash; John Leider</small></em>
-          </div>
-          <hr class="my-3">
-          <a
-            href="https://nuxtjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Nuxt Documentation
-          </a>
-          <br>
-          <a
-            href="https://github.com/nuxt/nuxt.js"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Nuxt GitHub
-          </a>
-        </v-card-text>
-        <v-card-actions>
-          <v-spacer />
-          <v-btn
-            color="primary"
-            nuxt
-            to="/inspire"
-          >
-            Continue
-          </v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-col>
-  </v-row>
+  <v-container>
+    <v-row class="primero">
+      <v-col class="inicio" cols="2">
+        <v-icon>mdi-account-injury</v-icon>
+        <h5>Total Patient</h5>
+      </v-col>
+      <v-col class="inicio" cols="2">
+        <v-icon>mdi-needle</v-icon>
+        <h5>Total Doctors</h5>
+      </v-col>
+      <v-col class="inicio" cols="2">
+        <v-icon>mdi-home</v-icon>
+        <h5>Total Wards</h5>
+      </v-col>
+      <v-col class="inicio" cols="2">
+        <v-icon>mdi-medication</v-icon>
+        <h5>Total Labs</h5>
+      </v-col>
+    </v-row>
+    <v-row class="texto">
+      <h3 class="titulo">
+        Recent Doctors
+      </h3>
+      <p class="parrafo">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, culpa.
+      </p>
+      <v-simple-table class="tabla">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Mobile</th>
+            <th>Address</th>
+            <th>Consultacy charge</th>
+            <th>Education</th>
+            <th>DOB</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="item in suppliers" :key="item.id">
+            <td>{{ item.id }}</td>
+            <td>{{ item.name }}</td>
+            <td>{{ item.mobile }}</td>
+            <td>{{ item.address }}</td>
+            <td>{{ item.consultacy }}</td>
+            <td>{{ item.education }}</td>
+            <td>{{ item.dob }}</td>
+            <td>
+              <v-btn icon small>
+                <v-icon>mdi-delete</v-icon>
+              </v-btn>
+            </td>
+          </tr>
+        </tbody>
+      </v-simple-table>
+    </v-row>
+    <v-row class="texto1">
+      <h3 class="titulo">
+        Out of Stock
+      </h3>
+      <p class="parrafo">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, culpa.
+      </p>
+      <v-simple-table class="tabla">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Drug Name</th>
+            <th>Expire Date</th>
+            <th>Manufacture Date</th>
+            <th>Price</th>
+            <th>QTY</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="item in suppliers" :key="item.id">
+            <td>{{ item.id }}</td>
+            <td>{{ item.name }}</td>
+            <td>{{ item.date }}</td>
+            <td>{{ item.mdate }}</td>
+            <td>{{ item.price }}</td>
+            <td>{{ item.qty }}</td>
+            <td>
+              <v-icon>mdi-status</v-icon>
+            </td>
+          </tr>
+        </tbody>
+      </v-simple-table>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
@@ -81,3 +98,41 @@ export default {
   name: 'IndexPage'
 }
 </script>
+
+<style scoped>
+.texto {
+    background-color:rgb(247, 244, 241);
+    border-radius: 13px;
+    margin-left: 1.6%;
+    margin-right: 1.6%;
+    margin-top: 4%
+  }
+  .texto1 {
+    background-color:rgb(247, 244, 241);
+    border-radius: 13px;
+    margin-left: 1.6%;
+    margin-right: 1.6%;
+    margin-top: 4%;
+  }
+.parrafo {
+    margin-top: 6%;
+  }
+  .tabla {
+    margin-top: 1%;
+    width: 90%;
+    margin-left: 3%;
+    margin-right: 1%;
+  }
+  .titulo {
+    margin-top: 1%;
+    margin-left: 2%;
+  }
+.primero {
+  margin-top: 2%;
+}
+.inicio {
+  background-color:rgb(247, 244, 241);
+  border-radius: 10px;
+  margin-left: 6%;
+}
+</style>

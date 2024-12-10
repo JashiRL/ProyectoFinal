@@ -2,22 +2,29 @@
   <v-container>
     <v-row class="texto">
       <v-col>
-        <h3>Medicine Management</h3>
+        <h3>Lab Management</h3>
+      </v-col>
+    </v-row>
+    <v-row class="subtexto">
+      <v-col md="8">
+        <h4>View all lab Details</h4>
+      </v-col>
+      <v-col md="3">
+        <v-btn class="boton1">
+          Generate Report
+        </v-btn>
+      </v-col>
+      <v-col md="1">
+        <v-btn class="bg-surface-variant rounded-circle mx-auto" style="height: 50px; width: 40px; background: linear-gradient(-90deg,#7f7694, #8e81cc);">
+          +
+        </v-btn>
       </v-col>
     </v-row>
     <v-row class="texto2">
       <v-col md="6">
-        <v-btn class="boton1">
-          Generate Report
-        </v-btn>
-        <v-text-field label="Medicine Name" outlined />
-        <v-text-field type="date" label="Expire Date" outlined />
-        <v-text-field label="QTY" outlined />
-      </v-col>
-      <v-col md="4" class="columna2">
-        <v-text-field class="renglon" label="Medicine Id" outlined />
-        <v-text-field class="renglon1" label="Supplier Name" outlined />
-        <v-text-field type="date" class="renglon2" label="Manufectare Date" outlined />
+        <h3>Assign Lab For Patient</h3>
+        <v-text-field class="renglonsup" label="Lab" outlined />
+        <v-text-field type="date" label="Date" outlined />
         <v-text-field
           label="Unit Price"
           outlined
@@ -30,6 +37,11 @@
             </div>
           </template>
         </v-text-field>
+      </v-col>
+      <v-col md="4" class="columna2">
+        <v-text-field class="renglon" label="Lab Id" outlined />
+        <v-text-field class="renglon1" label="Patient Name" outlined />
+        <v-text-field type="time" class="renglon2" label="Time" outlined />
       </v-col>
       <v-col md="2">
         <v-btn class="boton2">
@@ -48,7 +60,7 @@
     </v-row>
     <v-row class="texto3">
       <h3 class="titulo">
-        Out of Stock
+        Recent Assingn Lab For Patient
       </h3>
       <p class="parrafo">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, culpa.
@@ -57,24 +69,22 @@
         <thead>
           <tr>
             <th>ID</th>
-            <th>Medicine Name</th>
-            <th>Expire Date</th>
-            <th>Manufacture Date</th>
-            <th>Supplier Name</th>
-            <th>Unit Price</th>
-            <th>QTY</th>
+            <th>Lab</th>
+            <th>Patient</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Price</th>
             <th>Actions</th>
           </tr>
         </thead>
         <tbody>
           <tr v-for="item in suppliers" :key="item.id">
-            <td>{{ item.medicineID }}</td>
-            <td>{{ item.mnombre }}</td>
-            <td>{{ item.expireDate }}</td>
-            <td>{{ item.manuDate }}</td>
-            <td>{{ item.supplier }}</td>
-            <td>{{ item.unitPrice }}</td>
-            <td>{{ item.qty }}</td>
+            <td>{{ item.id }}</td>
+            <td>{{ item.lab }}</td>
+            <td>{{ item.patient }}</td>
+            <td>{{ item.date }}</td>
+            <td>{{ item.time }}</td>
+            <td>{{ item.price }}</td>
             <td>
               <v-btn icon small>
                 <v-icon>mdi-pencil</v-icon>
@@ -97,6 +107,9 @@ export default {
 </script>
 
 <style scoped>
+.renglonsup {
+  margin-top: 20%;
+}
 .parrafo {
   margin-top: 6%;
 }
@@ -143,13 +156,19 @@ export default {
   margin-left: 1.6%;
   margin-right: 1.6%;
 }
-
+.subtexto {
+  background-color:rgb(255, 255, 255);
+  border-radius: 13px;
+  margin-left: 1.6%;
+  margin-right: 1.6%;
+  margin-top: 2%;
+}
 .texto2 {
   background-color:rgb(247, 244, 241);
   border-radius: 13px;
   margin-left: 1.6%;
   margin-right: 1.6%;
-  margin-top: 5%;
+  margin-top: 1.5%;
 }
 .texto3 {
   background-color:rgb(247, 244, 241);
