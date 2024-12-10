@@ -47,6 +47,7 @@
             <th>Drug Name</th>
             <th>Expire Date</th>
             <th>Manufacture Date</th>
+            <th>Supplier</th>
             <th>Price</th>
             <th>QTY</th>
             <th>Status</th>
@@ -54,11 +55,12 @@
         </thead>
         <tbody>
           <tr v-for="item in suppliers" :key="item.id">
-            <td>{{ item.id }}</td>
-            <td>{{ item.name }}</td>
-            <td>{{ item.date }}</td>
-            <td>{{ item.mdate }}</td>
-            <td>{{ item.price }}</td>
+            <td>{{ item.medicineID }}</td>
+            <td>{{ item.mnombre }}</td>
+            <td>{{ item.expireDate }}</td>
+            <td>{{ item.manuDate }}</td>
+            <td>{{ item.supplierName }}</td>
+            <td>{{ item.unitPrice }}</td>
             <td>{{ item.qty }}</td>
             <td>
               <v-icon>mdi-status</v-icon>

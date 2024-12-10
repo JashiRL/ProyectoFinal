@@ -53,7 +53,6 @@
           <tr>
             <th>ID</th>
             <th>Name</th>
-            <th>Rol</th>
             <th>Gender</th>
             <th>Mobile Number</th>
             <th>NIC</th>
@@ -63,13 +62,12 @@
         </thead>
         <tbody>
           <tr v-for="item in suppliers" :key="item.id">
-            <td>{{ item.id }}</td>
-            <td>{{ item.name }}</td>
-            <td>{{ item.rol }}</td>
-            <td>{{ item.gender }}</td>
-            <td>{{ item.number }}</td>
-            <td>{{ item.nic }}</td>
-            <td>{{ item.dob }}</td>
+            <td>{{ item.aptid }}</td>
+            <td>{{ item.pnombre }}</td>
+            <td>{{ item.pgenero }}</td>
+            <td>{{ item.ptelefono }}</td>
+            <td>{{ item.pNIC }}</td>
+            <td>{{ item.pdob }}</td>
             <td>
               <v-btn icon small>
                 <v-icon>mdi-status</v-icon>

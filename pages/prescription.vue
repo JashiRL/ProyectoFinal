@@ -65,9 +65,9 @@
         </thead>
         <tbody>
           <tr v-for="item in suppliers" :key="item.id">
-            <td>{{ item.id }}</td>
-            <td>{{ item.patient }}</td>
-            <td>{{ item.treatment }}</td>
+            <td>{{ item.prescriptionID }}</td>
+            <td>{{ item.patientName }}</td>
+            <td>{{ item.treatmentName }}</td>
             <td>{{ item.price }}</td>
             <td>{{ item.prescription }}</td>
             <td>{{ item.issued }}</td>

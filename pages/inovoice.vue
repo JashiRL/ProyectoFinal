@@ -51,13 +51,13 @@
         </thead>
         <tbody>
           <tr v-for="item in suppliers" :key="item.id">
-            <td>{{ item.id }}</td>
-            <td>{{ item.name }}</td>
-            <td>{{ item.Lname }}</td>
-            <td>{{ item.ward }}</td>
-            <td>{{ item.doctor }}</td>
-            <td>{{ item.treatment }}</td>
-            <td>{{ item.total }}</td>
+            <td>{{ item.invoiceID }}</td>
+            <td>{{ item.patientName }}</td>
+            <td>{{ item.labName }}</td>
+            <td>{{ item.wardNumber }}</td>
+            <td>{{ item.doctorName }}</td>
+            <td>{{ item.treatmentN }}</td>
+            <td>{{ item.invoicePrice }}</td>
             <td>
               <v-btn icon small>
                 <v-icon>mdi-pencil</v-icon>

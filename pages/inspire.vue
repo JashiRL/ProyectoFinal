@@ -72,7 +72,7 @@
             <td>{{ item.mnombre }}</td>
             <td>{{ item.expireDate }}</td>
             <td>{{ item.manuDate }}</td>
-            <td>{{ item.supplier }}</td>
+            <td>{{ item.supplierName }}</td>
             <td>{{ item.unitPrice }}</td>
             <td>{{ item.qty }}</td>
             <td>

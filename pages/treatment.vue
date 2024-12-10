@@ -61,21 +61,20 @@
             <th>Patient Name</th>
             <th>Doctor Name</th>
             <th>Number of nurses</th>
-            <th>Lab Name</th>
             <th>Total Ward Charge</th>
+            <th>Lab Name</th>
             <th>Actions</th>
           </tr>
         </thead>
         <tbody>
           <tr v-for="item in suppliers" :key="item.id">
-            <td>{{ item.id }}</td>
-            <td>{{ item.treatment }}</td>
-            <td>{{ item.patient }}</td>
-            <td>{{ item.manufacture }}</td>
-            <td>{{ item.doctor }}</td>
-            <td>{{ item.nurses }}</td>
-            <td>{{ item.totalward }}</td>
-            <td>{{ item.lab }}</td>
+            <td>{{ item.treatmentid }}</td>
+            <td>{{ item.treatmentName }}</td>
+            <td>{{ item.patientName }}</td>
+            <td>{{ item.doctorName }}</td>
+            <td>{{ item.numberOfNurses }}</td>
+            <td>{{ item.totalWardCharge }}</td>
+            <td>{{ item.labName }}</td>
             <td>
               <v-btn icon small>
                 <v-icon>mdi-pencil</v-icon>

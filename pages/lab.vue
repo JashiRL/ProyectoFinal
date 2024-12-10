@@ -79,12 +79,12 @@
         </thead>
         <tbody>
           <tr v-for="item in suppliers" :key="item.id">
-            <td>{{ item.id }}</td>
-            <td>{{ item.lab }}</td>
-            <td>{{ item.patient }}</td>
-            <td>{{ item.date }}</td>
-            <td>{{ item.time }}</td>
-            <td>{{ item.price }}</td>
+            <td>{{ item.labid }}</td>
+            <td>{{ item.labname }}</td>
+            <td>{{ item.pnombre }}</td>
+            <td>{{ item.labDate }}</td>
+            <td>{{ item.labTime }}</td>
+            <td>{{ item.labPrice }}</td>
             <td>
               <v-btn icon small>
                 <v-icon>mdi-pencil</v-icon>
